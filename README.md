@@ -1,6 +1,4 @@
 first_app
 =========
-[![Building First App with Ruby on Rails Guides]]
-
 #### Overview
-__Purpose:__ Learn Ruby on Rails
+__Purpose:__ Learn Ruby on Rails by building test app from http://guides.rubyonrails.org/
