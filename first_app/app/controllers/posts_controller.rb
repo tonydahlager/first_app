@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+	
 	def new
 		@post = Post.new
 	end
@@ -9,6 +10,8 @@ class PostsController < ApplicationController
 		if @post.save
 			redirect_to @post
 		else 
+			# TONY
+			# what effect does this have?
 			render 'new'
 		end
 	end
