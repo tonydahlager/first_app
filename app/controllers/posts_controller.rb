@@ -26,6 +26,12 @@ class PostsController < ApplicationController
 		@posts = Post.all
 	end
 
+	# Add edit action for update part of CRUD
+	def edit
+		# Locate post to update by :id
+		@post = Post.find(params[:id])
+	end
+
 	private
 		def post_params
 			params.require(:post).permit(:title, :text)
