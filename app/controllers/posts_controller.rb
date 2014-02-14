@@ -14,6 +14,8 @@ class PostsController < ApplicationController
 		else 
 			# TONY
 			# what effect does this have?
+			# 'render' means it will pass the @post object back into the 'new' template (ie new.html.erb) 
+			#   so that you can resume editing the same params failed the data validation
 			render 'new'
 		end
 	end
@@ -30,6 +32,13 @@ class PostsController < ApplicationController
 	def edit
 		# Locate post to update by :id
 		@post = Post.find(params[:id])
+	end
+
+	def update
+		@post = Post.find(params[:id])
+
+		if @post.update(params[:post].permit(:title, :text))
+			redirect_to @post
 	end
 
 	private
