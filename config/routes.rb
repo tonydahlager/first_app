@@ -4,6 +4,10 @@ FirstApp::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+
+  # TD QUESTION 2/13/14
+  # Where do routes exist in the path of the HTML request in relation to the controller?
+  
   resources :posts
 
   root to: "welcome#index"

@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+	# TD QUESTION 2/13/14
+	# what properties or abilities do new controllers inhert from the ApplicationController and the ActionController?
 	
 	def new
 		@post = Post.new
