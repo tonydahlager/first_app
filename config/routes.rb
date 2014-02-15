@@ -1,5 +1,7 @@
 FirstApp::Application.routes.draw do
+  
   get "welcome/index"
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -13,6 +15,14 @@ FirstApp::Application.routes.draw do
     resources :comments
   end
 
+  resources :posts
+  
+  # TONY
+  # What is the long hand way to write all the resource routes?
+  
+  # I could write the following:
+  #   get '/posts/:id', to 'posts#show' one by one for each incoming request
+  
   root to: "welcome#index"
 
   # Example of regular route:
