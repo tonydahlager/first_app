@@ -3,6 +3,9 @@ class PostsController < ApplicationController
 	# what properties or abilities do new controllers inhert from the ApplicationController and the ActionController?
 	
 	def new
+		# Post is the prototype that we want to load specific
+		#   data from. We can load that data into a post instance
+		#   which assigns data from the 
 		@post = Post.new
 	end
 
@@ -15,7 +18,8 @@ class PostsController < ApplicationController
 			# TONY
 			# what effect does this have?
 			# 'render' means it will pass the @post object back into the 'new' template (ie new.html.erb) 
-			#   so that you can resume editing the same params failed the data validation
+			#   so that you can resume editing the same params failed the data validation. It can do this
+			#   because we are already in the Post controller
 			render 'new'
 		end
 	end
@@ -42,6 +46,13 @@ class PostsController < ApplicationController
 		else
 			render 'edit'
 		end
+	end
+
+	def destroy
+		@post = Post.find(params[:id])
+		@post.destroy
+
+		redirect_to posts_path
 	end
 
 	private

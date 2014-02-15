@@ -8,7 +8,10 @@ FirstApp::Application.routes.draw do
   # TD QUESTION 2/13/14
   # Where do routes exist in the path of the HTML request in relation to the controller?
   
-  resources :posts
+  resources :posts do
+  # This creates comments as a nested resource within posts.
+    resources :comments
+  end
 
   root to: "welcome#index"
 
