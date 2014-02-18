@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+	http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+
 	# TD QUESTION 2/13/14
 	# what properties or abilities do new controllers inhert from the ApplicationController and the ActionController?
 	
