@@ -1,6 +1,9 @@
 FirstApp::Application.routes.draw do
   
   get "users/new"
+
+  # Map users#new to /signup instead
+  match '/signup', to: 'users#new', via: 'get'
   get "welcome/index"
   
   # The priority is based upon order of creation: first created -> highest priority.
