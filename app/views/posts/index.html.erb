@@ -1,24 +1,24 @@
-<h2 class="header">Listing posts</h2>
+<h2 class="header">Tony's Index of Blog Posts</h2>
 
 <table>
-	<tr>
-		<th>Title</th>
-		<th>Text</th>
-	</tr>
 
 	<% @posts.each do |post| %>
-	<tr>
-		<td><%= post.title %></td>
-		<td><%= post.text %></td>
-		<td><%= link_to 'Show', post %></td>
-		<td><%= link_to 'Edit', edit_post_path(post) %></td>
-		<td><%= link_to 'Destroy', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<p>
+			<strong><%= post.title %></strong><br/>
+			<%= post.text %>
+		</p>
+		<p>
+			<%= link_to 'Show', post %>
+			 | 
+			<%= link_to 'Edit', edit_post_path(post) %>
+			 | 
+			<%= link_to 'Destroy', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+		</p>
 		<!-- TD Follow-up
 		I want to learn more about the HTML5 behind the method and 'data-confirm' attributes here. Read more about application.html.erb and jquery_ujs -->
-	</tr>
 	<% end %>
 </table>
 
 <p>
-	<%= link_to 'New Post', new_post_path, class: "btn" %>
+	<%= link_to 'New Post', new_post_path, class: "btn btn-small" %>
 </p>

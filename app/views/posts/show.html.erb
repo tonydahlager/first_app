@@ -1,22 +1,17 @@
 <div class="header">
-	<h2>Blog Posts!</h2>
+	<h2><%= @post.title %></h2>
 </div>
-<p>
-	<strong>Title:</strong>
-	<%= @post.title %>
-</p>
 
 <p>
-	<strong>Text:</strong>
-	<%= @post.text %>
+	<h3><%= @post.text %></h3>
 </p>
 
-<h2>Comments</h2>
+<h5>Comments</h5>
 
 <!-- Note that render method iterates over the @post.comments collection and assigns each comment to a local variable named the same as the partial (ie comment) which is available in the partial for us to show-->
 <%= render @post.comments %>
 
-<h2>Add a comment:</h2>
+<h6>Add a comment:</h6>
 <%= render 'comments/form' %>
 
 <%= link_to 'Back', posts_path %>
